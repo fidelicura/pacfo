@@ -1,3 +1,7 @@
-fn main() {
-    println!("Hello, world!");
-}
+#![allow(dead_code)]
+
+mod package;
+
+
+
+fn main() {}
