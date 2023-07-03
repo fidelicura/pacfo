@@ -2,5 +2,9 @@
 name = "pacformer"
 version = "0.1.0"
 edition = "2021"
+license = "AGPL-3.0-only"
+repository = "https://github.com/fidelicura/pacfo"
+authors = ["Kirill 'fidelicura' Bezuglyi <fidelicura@gmail.com>"]
+description = "Prettify your pacman package info with user-friendly and lightweight tool!"
 
 [dependencies]
