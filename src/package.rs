@@ -42,7 +42,7 @@ impl From<String> for Package {
             .arg("-Si")
             .arg(value)
             .output()
-            .expect("Failed to execute `pacman -Si`. Is it installed?")
+            .expect("Failed to execute `pacman -Si`. Is `pacman` installed?")
             .stdout
             .lines()
             .for_each(|line| {
@@ -68,7 +68,8 @@ impl From<String> for Package {
             });
 
         if name.is_empty() {
-            panic!("Package is not found...")
+            eprintln!("\nCannot find package with such name :(");
+            std::process::exit(1);
         } else {
             if size.is_empty() {
                 size = String::from("unable to calculate size of package");
