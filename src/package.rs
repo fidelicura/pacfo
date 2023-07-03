@@ -11,7 +11,7 @@ struct Package {
 }
 
 impl Package {
-    pub(crate) fn new(
+    fn new(
         size: f32,
         repo: String,
         build: String,
