@@ -7,17 +7,17 @@ arch=('x86_64')
 url="https://github.com/fidelicura/pacfo"
 license=('AGPL-3.0')
 depends=('glibc')
-makedepends=('rust')
-source=('pacfo::git://github.com/fidelicura/pacfo.git')
+makedepends=('rust' 'git')
+source=('git+https://github.com/fidelicura/pacfo.git')
 md5sums=('SKIP')
 
 build() {
 	cd "$pkgname"
-	make
+  cargo build --release
 }
 
 package() {
 	cd "$pkgname"
-  install -Dm755 ./release/pacfo "$pkgdir/usr/bin/pacfo"
+  install -Dm755 ./target/release/pacfo "$pkgdir/usr/bin/pacfo"
   install -Dm644 ./README.md "$pkgdir/usr/share/doc/$pkgname"
 }
